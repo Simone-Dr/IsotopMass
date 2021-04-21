@@ -27,10 +27,11 @@ function ChangeRange(inp){
 	Range = inp; 
 }
 
-function solve(Mass){
+function solve(Mass, uniqueAtoms){
 	let SolMass;
 	let i = 0; 
 	let SolCount = 0; 
+
 
 	for (let FirstAtom = 0; FirstAtom < FirstAtomNumber; FirstAtom++) { 
 
@@ -49,6 +50,8 @@ function solve(Mass){
 			}								 
 		}
 	}
+
+if (uniqueAtoms >=2){ 
 
 	for (let FirstAtom = 0; FirstAtom < FirstAtomNumber; FirstAtom++) { 
 
@@ -77,6 +80,8 @@ function solve(Mass){
 			}
 		}
 	}
+
+if (uniqueAtoms >=3) {
 
 	for (let FirstAtom = 0; FirstAtom < FirstAtomNumber; FirstAtom++) { 
 
@@ -115,6 +120,7 @@ function solve(Mass){
 		}
 	}
 
+if (uniqueAtoms >= 4) {
 
 	for (let FirstAtom = 0; FirstAtom < FirstAtomNumber; FirstAtom++) { 
 
@@ -164,7 +170,7 @@ function solve(Mass){
 	}
 
 
-
+if (uniqueAtoms >=5) {
 
 	for (let FirstAtom = 0; FirstAtom < FirstAtomNumber; FirstAtom++) { 
 
@@ -221,9 +227,10 @@ function solve(Mass){
 		}
 	}
 
-
-
-	
+}
+}
+}
+}	
 	console.log(Solutions); 
 	let strSave = " "; 
 

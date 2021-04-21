@@ -14,8 +14,11 @@
   	<input type="text" id="Input" name="Input">
   	<label> Range: </label>
   	<input type="text" id="RangeChange">
+  	<label> Max Number of unique Atoms: </label>
+  	<input type="text" id="uniqueAtoms">
   	<button onclick="ChangeRange(parseFloat(document.getElementById('RangeChange').value));
-  					 solve(parseFloat(document.getElementById('Input').value)) ">Submit</button> <br>
+  					 solve(parseFloat(document.getElementById('Input').value), 
+  					 	   parseFloat(document.getElementById('uniqueAtoms').value))">Submit</button> <br>
   	<p id="output"> </p>
 </body>
 </html>
