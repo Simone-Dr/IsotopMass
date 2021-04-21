@@ -29,7 +29,6 @@ function ChangeRange(inp){
 
 function solve(Mass, uniqueAtoms){
 	let SolMass;
-	let i = 0; 
 	let SolCount = 0; 
 
 
