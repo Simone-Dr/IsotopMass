@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<script src="test.js"></script>
+</head>
+<body style="font-family: Arial">
+	<label>Must Include: </label>
+	<input type="text" id="FirstAtom">
+	<button onclick="SetFirstAtom(parseFloat(document.getElementById('FirstAtom').value))">Submit</button>
+	<label>Mass: </label>
+  	<input type="text" id="Input" name="Input">
+  	<label> Range: </label>
+  	<input type="text" id="RangeChange">
+  	<button onclick="ChangeRange(parseFloat(document.getElementById('RangeChange').value));
+  					 solve(parseFloat(document.getElementById('Input').value)) ">Submit</button> <br>
+  	<p id="output"> </p>
+</body>
+</html>
