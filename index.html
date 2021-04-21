@@ -5,20 +5,33 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<script src="test.js"></script>
+	<link rel="stylesheet" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
 </head>
-<body style="font-family: Arial">
-	<label>Must Include: </label>
-	<input type="text" id="FirstAtom">
-	<button onclick="SetFirstAtom(parseFloat(document.getElementById('FirstAtom').value))">Submit</button>
-	<label>Mass: </label>
-  	<input type="text" id="Input" name="Input">
-  	<label> Range: </label>
-  	<input type="text" id="RangeChange">
-  	<label> Max Number of unique Atoms: </label>
-  	<input type="text" id="uniqueAtoms">
-  	<button onclick="ChangeRange(parseFloat(document.getElementById('RangeChange').value));
-  					 solve(parseFloat(document.getElementById('Input').value), 
-  					 	   parseFloat(document.getElementById('uniqueAtoms').value))">Submit</button> <br>
+<body >
+	<div class="top">
+		
+		<label>Mass: </label>
+	  	<input type="text" id="Input" name="Input">
+	  	<label> Range: </label>
+	  	<input type="text" id="RangeChange">
+	  	<label> Max Number of unique Atoms: </label>
+	  	<input type="text" id="uniqueAtoms">
+	  	<button class="button" onclick="ChangeRange(parseFloat(document.getElementById('RangeChange').value));
+	  					 solve(parseFloat(document.getElementById('Input').value), 
+	  					 	   parseFloat(document.getElementById('uniqueAtoms').value))">Submit</button> 
+
+	  	<p class = "small"> Use "." not "," </p>
+	  	<br>
+	  	<p > Optional: </p>
+		
+			<label>Must Include: </label>
+			<input type="text" id="FirstAtom">
+			<button class="button" onclick="SetFirstAtom(parseFloat(document.getElementById('FirstAtom').value))">Submit</button> 
+			<p class = "small"> Must be submitted before the other submit, can only include one number <br> [0 = C, 1 = H, 2 = O, 3 = S, 4 = Br, 5 = Cl, 6 = I, 7 = N, 8 = Si, 9 = Se, 10 = B , 11 = P] <br><br> refresh page after every calculation</p>
+	
+	</div>
+
   	<p id="output"> </p>
 </body>
 </html>

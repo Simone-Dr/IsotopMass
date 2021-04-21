@@ -11,6 +11,8 @@ var ForSetAtom = 0;
 
 
 function SetFirstAtom(atomNr){
+	atom = ["C", "H", "O", "S", "Br", "Cl", "I", "N", "Si", "Se", "B" , "P"];
+	IsotopMass = [12.000000, 1.007825, 15.994915, 31.972071, 78.918338, 34.968853, 126.904468, 14.003074, 27.976927, 79.916522, 11.009305, 30.973762];
 	let tempAtom = atom[atomNr];
 	let tempMass = IsotopMass[atomNr];
 	atom[atomNr] = atom[0];
@@ -31,7 +33,6 @@ function solve(Mass, uniqueAtoms){
 	let SolMass;
 	let SolCount = 0; 
 
-
 	for (let FirstAtom = 0; FirstAtom < FirstAtomNumber; FirstAtom++) { 
 
 		for(let CountOne = 1; CountOne < HowManyOfOneType; CountOne++) {
@@ -42,7 +43,7 @@ function solve(Mass, uniqueAtoms){
 
 			if ((SolMass >= (Mass - Range)) && (SolMass <= (Mass + Range))) {
 			 
-				let temp = [atom[FirstAtom], CountOne, " Masse: " ,SolMass.toFixed(5)];
+				let temp = [" Masse: " ,SolMass.toFixed(5), "........" , atom[FirstAtom], CountOne ];
 				Solutions[SolCount] = temp; 
 				SolCount++;
 
@@ -69,7 +70,7 @@ if (uniqueAtoms >=2){
 
 						if ((SolMass >= (Mass - Range)) && (SolMass <= (Mass + Range))) {
 						 
-							let temp = [atom[FirstAtom], CountOne, atom[SecondAtom], CountTwo,  " Masse: " ,SolMass.toFixed(5)];
+							let temp = [" Masse: " ,SolMass.toFixed(5), "........" ,atom[FirstAtom], CountOne, atom[SecondAtom], CountTwo];
 							Solutions[SolCount] = temp; 
 							SolCount++;
 
@@ -105,7 +106,7 @@ if (uniqueAtoms >=3) {
 
 									if ((SolMass >= (Mass - Range)) && (SolMass <= (Mass + Range))) {
 									 
-										let temp = [atom[FirstAtom], CountOne, atom[SecondAtom], CountTwo, atom[ThirdAtom], CountThree,  " Masse: " ,SolMass.toFixed(5)];
+										let temp = [" Masse: " ,SolMass.toFixed(5), "........" , atom[FirstAtom], CountOne, atom[SecondAtom], CountTwo, atom[ThirdAtom], CountThree];
 										Solutions[SolCount] = temp; 
 										SolCount++;
 
@@ -150,7 +151,7 @@ if (uniqueAtoms >= 4) {
 
 												if ((SolMass >= (Mass - Range)) && (SolMass <= (Mass + Range))) {
 												 
-													let temp = [atom[FirstAtom], CountOne, atom[SecondAtom], CountTwo, atom[ThirdAtom], CountThree, atom[FourthAtom], CountFour,  " Masse: " ,SolMass.toFixed(5)];
+													let temp = [" Masse: " ,SolMass.toFixed(5), "........" , atom[FirstAtom], CountOne, atom[SecondAtom], CountTwo, atom[ThirdAtom], CountThree, atom[FourthAtom], CountFour];
 													Solutions[SolCount] = temp; 
 													SolCount++;
 
@@ -206,7 +207,7 @@ if (uniqueAtoms >=5) {
 
 															if ((SolMass >= (Mass - Range)) && (SolMass <= (Mass + Range))) {
 															 
-																let temp = [atom[FirstAtom], CountOne, atom[SecondAtom], CountTwo, atom[ThirdAtom], CountThree, atom[FourthAtom], CountFour, atom[FifthAtom], CountFive, " Masse: " ,SolMass.toFixed(5)];
+																let temp = [" Masse: " ,SolMass.toFixed(5), "........" , atom[FirstAtom], CountOne, atom[SecondAtom], CountTwo, atom[ThirdAtom], CountThree, atom[FourthAtom], CountFour, atom[FifthAtom], CountFive];
 																Solutions[SolCount] = temp; 
 																SolCount++;
 
@@ -234,7 +235,7 @@ if (uniqueAtoms >=5) {
 	let strSave = " "; 
 
 	for (var n = 0; n < Solutions.length; n++) { 
-		for (var m = 0; m < 12; m++) {			
+		for (var m = 0; m < Solutions[n].length; m++) {			
 			
 			if (Solutions[n][m] != undefined && Solutions[n][m] != 1){
 				strSave += (Solutions[n][m]);
